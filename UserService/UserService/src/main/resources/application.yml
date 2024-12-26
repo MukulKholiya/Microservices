@@ -8,6 +8,7 @@ spring:
     password: Mukul@2004
     hikari:
       driver-class-name: com.mysql.cj.jdbc.Driver
+      maximum-pool-size: 10
   jpa:
     hibernate:
       ddl-auto: update
@@ -15,3 +16,21 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
+  application:
+    name: userservice
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 30  # Heartbeat every 30 seconds
+    lease-expiration-duration-in-seconds: 90
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+logging:
+  level:
+    com.netflix.eureka: DEBUG
+    com.netflix.discovery: DEBUG

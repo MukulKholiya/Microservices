@@ -15,3 +15,17 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
+  application:
+    name: hotelservice
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 30  # Heartbeat every 30 seconds
+    lease-expiration-duration-in-seconds: 90
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+      # Expire after 90 seconds if no heartbeats
