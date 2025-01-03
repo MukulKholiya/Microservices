@@ -3,3 +3,9 @@ server:
 spring:
   application:
     name: CONFIG-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/MukulKholiya/Microservices
+          clone-on-start: true

@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -20,5 +21,6 @@ public class User {
     private String email;
     @Transient
     private List<Rating> ratings = new ArrayList<>();
+
 
 }
